@@ -64,8 +64,11 @@ namespace Web
             ApiService<BookModel, BookModel>.RequestType requestType = book.Id > 0 ? ApiService<BookModel, BookModel>.RequestType.PUT : ApiService<BookModel, BookModel>.RequestType.POST;
             GenericResponse<BookModel> task = await a.CallService("/Book", requestType, book);
             registerMessage<BookModel>(task);
-            loadData();
-            btnCancel_Click(sender, e);
+            if (!task.Error)
+            {
+                loadData();
+                btnCancel_Click(sender, e);
+            }
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
@@ -121,7 +124,7 @@ namespace Web
                 return;
             }
             ApiService<int?, bool> a = new ApiService<int?, bool>();
-            GenericResponse<bool> r = await a.CallService($"Book/{id}", ApiService<int?, bool>.RequestType.DELETE, null);
+            GenericResponse<bool> r = await a.CallService($"Book/delete/{id}", ApiService<int?, bool>.RequestType.DELETE, null);
             registerMessage<bool>(r);
             loadData();
         }

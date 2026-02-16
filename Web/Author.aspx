@@ -9,22 +9,22 @@
                     <asp:TextBox runat="server" ID="txtId" CssClass="form-control" onkeypress="return numbers(event)" onblur="validateValue(this)"></asp:TextBox>
                 </div>
                 <div class="col-6">
-                    <span>Full name</span>
+                    <span>Full name <span class="text-danger">*</span></span>
                     <asp:TextBox runat="server" ID="txtName" CssClass="form-control" MaxLength="100" onkeypress="return letters(event)" onblur="validateValue(this)"></asp:TextBox>
                     <span class="text-danger d-none">Full name is required</span>
                 </div>
                 <div class="col-6">
-                    <span>Birthdate</span>
-                    <asp:TextBox runat="server" ID="txtBirthdate" MaxLength="10" CssClass="form-control" onblur="validateValue(this)"></asp:TextBox>
+                    <span>Birthdate <span class="text-danger">*</span></span>
+                    <asp:TextBox runat="server" ID="txtBirthdate" TextMode="Date" MaxLength="10" CssClass="form-control" onblur="validateValue(this)"></asp:TextBox>
                     <span class="text-danger d-none">Birthdate is required</span>
                 </div>
                 <div class="col-6">
-                    <span>City origin</span>
+                    <span>City origin <span class="text-danger">*</span></span>
                     <asp:TextBox runat="server" ID="txtCityOrigin" MaxLength="100" CssClass="form-control" onkeypress="return letters(event)" onblur="validateValue(this)"></asp:TextBox>
                     <span class="text-danger d-none">City origin is required</span>
                 </div>
                 <div class="col-6">
-                    <span>Email</span>
+                    <span>Email <span class="text-danger">*</span></span>
                     <asp:TextBox runat="server" ID="txtEmail" MaxLength="100" CssClass="form-control" onblur="validateEmail()"></asp:TextBox>
                     <span class="text-danger d-none d-block w-100">Email is required</span>
                     <span class="text-danger text-email d-none d-block w-100">Email is invalid</span>

@@ -85,7 +85,7 @@ namespace Web
                 return;
             }
             ApiService<int?, bool> a = new ApiService<int?, bool>();
-            GenericResponse<bool> r = await a.CallService($"Author/{id}", ApiService<int?, bool>.RequestType.DELETE, null);
+            GenericResponse<bool> r = await a.CallService($"Author/delete/{id}", ApiService<int?, bool>.RequestType.DELETE, null);
             registerMessage<bool>(r);
             loadData();
         }

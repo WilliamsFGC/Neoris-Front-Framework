@@ -14,7 +14,7 @@ namespace Web.Services
             POST, PUT, DELETE, GET
         }
 
-        private string baseUrl = "https://localhost:7078/";
+        private string baseUrl = "https://localhost:44320/";
 
         public async Task<GenericResponse<R>> CallService(string url, RequestType requestType, T body)
         {
@@ -26,17 +26,17 @@ namespace Web.Services
             {
                 case RequestType.POST:
                     HttpContent content = new StringContent(JsonConvert.SerializeObject(body), Encoding.UTF8, "application/json");
-                    response = await client.PostAsync(url, content);
+                    response = await client.PostAsync($"{url}/add", content);
                     break;
                 case RequestType.PUT:
                     HttpContent contentPut = new StringContent(JsonConvert.SerializeObject(body), Encoding.UTF8, "application/json");
-                    response = await client.PutAsync(url, contentPut);
+                    response = await client.PutAsync($"{url}/update", contentPut);
                     break;
                 case RequestType.DELETE:
-                    response = await client.DeleteAsync(url);
+                    response = await client.PostAsync(url, null);
                     break;
                 default:
-                    response = await client.GetAsync(url);
+                    response = await client.GetAsync($"{url}/getAll");
                     break;
             }
 

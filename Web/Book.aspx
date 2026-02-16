@@ -10,27 +10,27 @@
                     <asp:TextBox CssClass="form-control" runat="server" ID="txtId" onkeypress="return numbers(event)"></asp:TextBox>
                 </div>
                 <div class="col-6">
-                    <span>Title</span>
+                    <span>Title <span class="text-danger">*</span></span>
                     <asp:TextBox MaxLength="100" CssClass="form-control" runat="server" ID="txtTitle" onkeypress="return alphaNumeric(event)" onblur="validateValue(this)"></asp:TextBox>
                     <span class="text-danger d-none">Title is required</span>
                 </div>
                 <div class="col-6">
-                    <span>Year</span>
+                    <span>Year <span class="text-danger">*</span></span>
                     <asp:TextBox MaxLength="4" CssClass="form-control" runat="server" ID="txtYear" onkeypress="return numbers(event)" onblur="validateValue(this)"></asp:TextBox>
                     <span class="text-danger d-none">Year is required</span>
                 </div>
                 <div class="col-6">
-                    <span>Genre</span>
+                    <span>Genre <span class="text-danger">*</span></span>
                     <asp:TextBox MaxLength="50" CssClass="form-control" runat="server" ID="txtGenre" onkeypress="return letters(event)" onblur="validateValue(this)"></asp:TextBox>
                     <span class="text-danger d-none">Genre is required</span>
                 </div>
                 <div class="col-6">
-                    <span>Number pages</span>
+                    <span>Number pages <span class="text-danger">*</span></span>
                     <asp:TextBox MaxLength="10" CssClass="form-control" runat="server" ID="txtPages" onkeypress="return numbers(event)" onblur="validateValue(this)"></asp:TextBox>
                     <span class="text-danger d-none">Number pages is required</span>
                 </div>
                 <div class="col-6">
-                    <span>Author</span>
+                    <span>Author <span class="text-danger">*</span></span>
                     <asp:DropDownList CssClass="form-control" runat="server" ID="cmbAuthor" onblur="validateValue(this)"></asp:DropDownList>
                     <span class="text-danger d-none">Author is required</span>
                 </div>
