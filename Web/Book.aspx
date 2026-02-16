@@ -11,22 +11,22 @@
                 </div>
                 <div class="col-6">
                     <span>Title</span>
-                    <asp:TextBox CssClass="form-control" runat="server" ID="txtTitle" onkeypress="return alphaNumeric(event)" onblur="validateValue(this)"></asp:TextBox>
+                    <asp:TextBox MaxLength="100" CssClass="form-control" runat="server" ID="txtTitle" onkeypress="return alphaNumeric(event)" onblur="validateValue(this)"></asp:TextBox>
                     <span class="text-danger d-none">Title is required</span>
                 </div>
                 <div class="col-6">
                     <span>Year</span>
-                    <asp:TextBox CssClass="form-control" runat="server" ID="txtYear" onkeypress="return numbers(event)" onblur="validateValue(this)"></asp:TextBox>
+                    <asp:TextBox MaxLength="4" CssClass="form-control" runat="server" ID="txtYear" onkeypress="return numbers(event)" onblur="validateValue(this)"></asp:TextBox>
                     <span class="text-danger d-none">Year is required</span>
                 </div>
                 <div class="col-6">
                     <span>Genre</span>
-                    <asp:TextBox CssClass="form-control" runat="server" ID="txtGenre" onkeypress="return letters(event)" onblur="validateValue(this)"></asp:TextBox>
+                    <asp:TextBox MaxLength="50" CssClass="form-control" runat="server" ID="txtGenre" onkeypress="return letters(event)" onblur="validateValue(this)"></asp:TextBox>
                     <span class="text-danger d-none">Genre is required</span>
                 </div>
                 <div class="col-6">
                     <span>Number pages</span>
-                    <asp:TextBox CssClass="form-control" runat="server" ID="txtPages" onkeypress="return numbers(event)" onblur="validateValue(this)"></asp:TextBox>
+                    <asp: MaxLength="10" CssClass="form-control" runat="server" ID="txtPages" onkeypress="return numbers(event)" onblur="validateValue(this)"></asp:>
                     <span class="text-danger d-none">Number pages is required</span>
                 </div>
                 <div class="col-6">
