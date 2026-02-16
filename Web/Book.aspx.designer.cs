@@ -57,8 +57,8 @@ namespace Web
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.txtPages;
-        
+        protected global::System.Web.UI.WebControls.TextBox txtPages;
+
         /// <summary>
         /// Control cmbAuthor.
         /// </summary>

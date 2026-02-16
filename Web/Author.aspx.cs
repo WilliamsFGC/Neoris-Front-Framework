@@ -96,10 +96,10 @@ namespace Web
         {
             if (result.Error)
             {
-                ClientScript.RegisterClientScriptBlock(result.GetType(), "error", "<script type='text/javascript'>Swal.fire({icon: 'error',text: '" + result.Message + "'})</script>");
+                ClientScript.RegisterClientScriptBlock(result.GetType(), "error", "<script type='text/javascript'>Swal.fire({icon: 'error',text: '" + (result.Message ?? "").Replace("'", "\"") + "'})</script>");
                 return;
             }
-            ClientScript.RegisterClientScriptBlock(result.GetType(), "error", "<script type='text/javascript'>Swal.fire({icon: 'success',text: '" + result.Message + "'})</script>");
+            ClientScript.RegisterClientScriptBlock(result.GetType(), "error", "<script type='text/javascript'>Swal.fire({icon: 'success',text: '" + (result.Message ?? "").Replace("'", "\"") + "'})</script>");
         }
     }
 }

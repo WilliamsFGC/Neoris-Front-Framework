@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-6">
                     <span>Number pages</span>
-                    <asp: MaxLength="10" CssClass="form-control" runat="server" ID="txtPages" onkeypress="return numbers(event)" onblur="validateValue(this)"></asp:>
+                    <asp:TextBox MaxLength="10" CssClass="form-control" runat="server" ID="txtPages" onkeypress="return numbers(event)" onblur="validateValue(this)"></asp:TextBox>
                     <span class="text-danger d-none">Number pages is required</span>
                 </div>
                 <div class="col-6">

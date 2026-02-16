@@ -27,6 +27,10 @@ namespace Web
             GenericResponse<IEnumerable<BookResponseModel>> result = await a.CallService("Book", ApiService<IEnumerable<BookResponseModel>, IEnumerable<BookResponseModel>>.RequestType.GET, null);
             gvBook.DataSource = result.Data ?? new List<BookResponseModel>();
             gvBook.DataBind();
+            if (result.Error)
+            {
+                registerMessage<IEnumerable<BookResponseModel>>(result);
+            }
         }
 
         private async void LoadAuthors()
@@ -39,6 +43,10 @@ namespace Web
             cmbAuthor.DataTextField = "Name";
             cmbAuthor.DataValueField = "Id";
             cmbAuthor.DataBind();
+            if (result.Error)
+            {
+                registerMessage<IEnumerable<AuthorModel>>(result);
+            }
         }
 
         protected async void btnSave_Click(object sender, EventArgs e)
@@ -123,10 +131,10 @@ namespace Web
         {
             if (result.Error)
             {
-                ClientScript.RegisterClientScriptBlock(result.GetType(), "error", "<script type='text/javascript'>Swal.fire({icon: 'error',text: '" + result.Message + "'})</script>");
+                ClientScript.RegisterClientScriptBlock(result.GetType(), "error", "<script type='text/javascript'>Swal.fire({icon: 'error',text: '" + (result.Message ?? "").Replace("'", "\"") + "'})</script>");
                 return;
             }
-            ClientScript.RegisterClientScriptBlock(result.GetType(), "error", "<script type='text/javascript'>Swal.fire({icon: 'success',text: '" + result.Message + "'})</script>");
+            ClientScript.RegisterClientScriptBlock(result.GetType(), "error", "<script type='text/javascript'>Swal.fire({icon: 'success',text: '" + (result.Message ?? "").Replace("'", "\"") + "'})</script>");
         }
     }
 }
