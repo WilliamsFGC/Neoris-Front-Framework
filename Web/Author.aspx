@@ -40,7 +40,7 @@
                 <Columns>
                     <asp:BoundField DataField="Id" HeaderText="Id" HeaderStyle-CssClass="bg-success text-light" />
                     <asp:BoundField DataField="Name" HeaderText="Full name" HeaderStyle-CssClass="bg-success text-light" />
-                    <asp:BoundField DataField="Birthdate" HeaderText="Birthdate" HeaderStyle-CssClass="bg-success text-light" />
+                    <asp:BoundField DataField="Birthdate" HeaderText="Birthdate" HeaderStyle-CssClass="bg-success text-light" DataFormatString="{0:dd/MM/yyyy}" />
                     <asp:BoundField DataField="CityOrigin" HeaderText="City origin" HeaderStyle-CssClass="bg-success text-light" />
                     <asp:BoundField DataField="Email" HeaderText="Email" HeaderStyle-CssClass="bg-success text-light" />
                     <asp:TemplateField HeaderText="Action" HeaderStyle-CssClass="bg-success text-light">
@@ -102,7 +102,9 @@
                 }
                 var textEmail = $(txtEmail[0].parentNode).find('.text-email');
                 textEmail.removeClass('d-none');
-                if (/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(txtEmail.val())) {
+                const goodFormat = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(txtEmail.val());
+                valid = valid && goodFormat;
+                if (goodFormat) {
                     textEmail.addClass('d-none');
                 }
 

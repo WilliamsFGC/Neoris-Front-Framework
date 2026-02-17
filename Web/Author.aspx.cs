@@ -50,7 +50,7 @@ namespace Web
                 GridViewRow row = gvBook.Rows[rowIndex];
                 txtId.Text = HttpUtility.HtmlDecode(row.Cells[0].Text);
                 txtName.Text = HttpUtility.HtmlDecode(row.Cells[1].Text);
-                txtBirthdate.Text = HttpUtility.HtmlDecode(Convert.ToDateTime(row.Cells[2].Text).ToString("dd/MM/yyyy"));
+                txtBirthdate.Text = HttpUtility.HtmlDecode(Convert.ToDateTime(row.Cells[2].Text).ToString("yyyy-MM-dd"));
                 txtCityOrigin.Text = HttpUtility.HtmlDecode(row.Cells[3].Text);
                 txtEmail.Text = HttpUtility.HtmlDecode(row.Cells[4].Text);
                 btnCancel.Visible = true;
